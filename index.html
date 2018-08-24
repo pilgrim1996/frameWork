@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/pageTwo.css">
+    <link rel="stylesheet" href="css/pageThree.css">
+    <link rel="stylesheet" href="css/pageFour.css">
+    <link rel="stylesheet" href="css/pageFive.css">
+    <script src="js/libs/jquery.js"></script>
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/libs/angular-route.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/libs/ui-bootstrap-tpls-2.1.3.js"></script>
+    <script src="js/libs/angular-ui-router.min.js"></script>
+    <script src="js/libs/angular-animate.min.js"></script>
+    <script src="js/libs/angular-cookies.min.js"></script>
+    <script src="js/libs/ocLazyLoad.min.js"></script>
+
+    <script src="js/app.js"></script>
+
+</head>
+<body ng-app="app">
+    <nav>
+        <div class="box">
+            STAYHUNGRY
+        </div>
+    </nav>
+    <footer>
+        <aside>
+            <ul>
+                <li>{{LoginTime}}</li>
+                <li ui-sref="PageOne"><a href="">page 1</a></li>
+                <li ui-sref="PageTwo"><a href="">page 2</a></li>
+                <li ui-sref="PageThree"><a href="">page 3</a></li>
+                <li ui-sref="PageFour"><a href="">page 4</a></li>
+                <li ui-sref="PageFive"><a href="">page 5</a></li>
+            </ul>
+
+        </aside>
+        <section>
+            <div ui-view></div>
+        </section>
+    </footer>
+</body>
+</html>

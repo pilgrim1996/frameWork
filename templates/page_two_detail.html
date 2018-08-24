@@ -1,0 +1,43 @@
+<div id="pageTwoDetail" class="panel panel-default" ng-controller="pageTwoDetailCtrl">
+    <h3>detail</h3>
+
+    <form class="form-horizon panel-body">
+        <div class="row col-md-12">
+            <div class="form-group col-md-12">
+                <label class="col-md-1 col-md-offset-4">name</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" ng-model="userInfo.name" placeholder="{{userInfo.name}}">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="col-md-1 col-md-offset-4">age</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" ng-model="userInfo.age" placeholder="{{userInfo.age}}">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="col-md-1 col-md-offset-4">sex</label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" ng-model="userInfo.sex" value="man" name="sex"><span>man</span>
+                        </label>
+                        <label>
+                            <input type="radio" ng-model="userInfo.sex" value="women" name="sex"><span>women</span>
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+
+                <div class="col-md-offset-4">
+                    <button class="btn btn-default" ng-click="update()">提交表单</button>
+                    <button class="btn btn-default col-md-offset-1" ng-click="resetInfo()">重置表单</button>
+                    <button class="btn btn-default col-md-offset-1" ng-click="goback()">go back</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

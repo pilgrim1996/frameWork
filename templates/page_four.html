@@ -1,0 +1,98 @@
+<div ng-controller="pageFourCtrl">
+    <h3>
+        this is page four
+    </h3>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">restrict</div>
+        </div>
+        <div class="panel-body">
+            <restrict-test><span>E 元素 &lt;myDirective&gt;&lt;/myDirective&gt;</span></restrict-test>
+            <div restrict-test><span>A 属性 &lt;div myDirective &gt;&lt;/div&gt;</span></div>
+            <div class=".restrict-test"><span>C 样式类 &lt;div class="myDirective" &gt;&lt;/div&gt;</span> </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">directive&firective</div>
+        </div>
+        <div class="panel-body">
+            <div><lotion hp>Lemon</lotion></div>
+            <div><lotion hp mp>Pepper</lotion></div>
+            <div><lotion hp mp exp>Balsam pear</lotion></div>
+            <div><lotion hp mp exp ce>Water melon</lotion></div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">scope的绑定策略</div>
+        </div>
+        <div class="panel-body">
+            <p>@ 把当前属性作为字符创传递，还可以绑定来自外层的值，在属性中插入{{}}即可</p>
+            <div>ctrl:<input type="text" class="input" ng-model="message1"></div>
+            <div>directive:<transmission-test transmission="{{message1}}"></transmission-test></div>
+            <p>= 与父scope中的属性进行双向绑定</p>
+            <div>ctrl:<input type="text" class="input" ng-model="message2"></div>
+            <div>directive:<transmission-test2 transmission2="message2"></transmission-test2></div>
+            <p>& 传递一个来自父scope的函数，然后调用</p>
+            <div>directive:<transmission-test3 transmission3="reset()"></transmission-test3></div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-body">angular的form表单</div>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizon" name="myForm" ng-submit="save()">
+                <div class="form-group">
+                    <p>
+                        username:<input name="userName" type="text" ng-model="userInfo.userName" required>
+                    </p>
+                    <p>
+                        userpassword:<input name="userPassword" type="password" ng-model="userInfo.userPassword" required>
+                    </p>
+                    <p>
+                        useremail:<input name="userEmail" type="email" ng-model="userInfo.userEmail" required>
+                        <span ng-show="myForm.userEmail.$error.required">please tell me your email</span>
+                    </p>
+                    <p>
+                        <input type="submit" ng-disabled="myForm.$invalid" >
+                    </p>
+                </div>
+            </form>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">ui-bootstrap</div>
+            </div>
+            <div class="panel-body">
+                <uib-accordion close-others="oneAtATime">
+                    <uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+                        {{group.content}}
+                    </uib-accordion-group>
+                </uib-accordion>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">service</div>
+            </div>
+            <div class="panel-body">
+                <p>printA:<input class="input" type="text" ng-model="serviceInput"> <button class="btn btn-default" ng-click="doing(serviceInput)">打印到控制台</button></p>
+
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">filter</div>
+            </div>
+            <div class="panel-body">
+                <p>123457890 : {{123457890 | date }}</p>
+                <p>123457890 : {{123457890 | date:"yyyy-MM-dd" }}</p>
+                <p>123457890 : {{123457890 | date:"MM/dd/yyyy hh:mm:dd" }}</p>
+            </div>
+        </div>
+    </div>
+</div>

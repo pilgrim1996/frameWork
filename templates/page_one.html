@@ -1,0 +1,46 @@
+<div ng-controller="pageOneCtrl">
+    <h3>
+        this is page one
+    </h3>
+    <p>
+        {{message}}
+    <p>
+    <h4>数据双向传播</h4>
+    <div><input type="text" class="input" ng-model="greeting.text">
+        <p class="p">{{greeting.text}},Angular</p>
+    </div>
+    <h4>angularjs中的作用域是有层次结构的，在当前作用域找不到时会到上一层查找，直到在根作用域找不到为止</h4>
+    <div>
+        <div  ng-controller = "GreetCtrl">
+            Hello {{name}}
+        </div>
+        <div ng-controller = "ListCtrl">
+            <table  ng-repeat = "name in names" class="table">
+                <tr>
+                    <td>
+                        {{name}} from {{department}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <h4>angular对scope是有一个事件的封装，一种叫向上传播，一种叫向下传播</h4>
+    <div ng-controller="EventCtrl">
+        Root scope
+        <b>MyEvent</b> count:{{count}}
+        <ul class="list-group">
+            <li ng-repeat="i in [1]"  ng-controller="EventCtrl">
+                <button ng-click="$emit('MyEvent')">emit('MyEvent')</button>
+                <button ng-click="$broadcast('MyEvent')">broadcast('MyEvent')</button><br>
+                Middle scope
+                <b>MyEvent</b> count:{{count}}
+                <ul class="list-group"  ng-controller="EventCtrl">
+                    <li ng-repeat="item in [1,2]" >
+                        Leaf scope
+                        <b>MyEvent</b> count:{{count}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

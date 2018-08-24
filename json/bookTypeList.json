@@ -1,0 +1,5 @@
+{"data":[
+  {"bookType":"education","jsonUrl":"json/educationJson.json"},
+  {"bookType":"culture","jsonUrl":"json/cultureJson.json"},
+  {"bookType":"novel","jsonUrl":"json/novelJson.json"}
+]}

@@ -1,0 +1,66 @@
+<div ng-controller="pageThreeCtrl" id="pagethree">
+    <h3>
+        this is page three
+    </h3>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">双向数据绑定</div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="" class="form-horizon" >
+                        <div class="form-group col-md-12">
+                            <label class="col-md-2">姓名</label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" ng-model="userInfo.name">
+                            </div>
+                            <p class="col-md-4" ng-bind="bindInfo.name"></p>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="col-md-2">密码</label>
+                            <div class="col-md-4">
+                                <input type="password" class="form-control" ng-model="userInfo.password">
+                            </div>
+                            <p class="col-md-4" ng-bind="bindInfo.password"></p>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="col-md-2">邮箱</label>
+                            <div class="col-md-4">
+                                <input type="email" class="form-control" ng-model="userInfo.email">
+                            </div>
+                            <p class="col-md-4" ng-bind="bindInfo.email"></p>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <div class="col-md-offset-2 col-md-10" >
+                                <button class="btn btn-default" ng-click="getFromData()">获取form表单的值</button>
+                                <button class="btn btn-default" ng-click="setFromData()">设置form表单的值</button>
+                                <button class="btn btn-default" ng-click="resetFromData()">重置form表单</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">ngclass\ngshow</div>
+        </div>
+        <div class="panel-body">
+
+            <div class="col-md-12">
+                <div class="col-md-2">
+                    <button class="btn btn-default" ng-click="toggleContent()">toggle</button>
+                </div>
+                <div class="col-md-8" ng-show='toggleFlag'>
+                    <button class="btn btn-default col-md-2" ng-click="setRed()">setRed</button>
+                    <button class="btn btn-default col-md-2" ng-click="setGreen()">setGreen</button>
+                    <p class="col-md-4" ng-class="{red:isRed,green:isGreen}">样式变化</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

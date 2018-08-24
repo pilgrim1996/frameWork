@@ -1,0 +1,24 @@
+<div ng-controller="pageTwoCtrl" id="pageTwo">
+    <h3>
+        this is page two<a ui-sref="PageTwoAddition">新增</a>
+    </h3>
+
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th class="col-md-4">name</th>
+            <th class="col-md-4">age</th>
+            <th class="col-md-4">sex</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat = "row in tableData ">
+        <tr>
+            <td><a ui-sref="PageTwoDetail({id:{{$index+pageRows*(pageIndex-1)}}})">{{row.name}}</a></td>
+            <td>{{row.age}}</td>
+            <td>{{row.sex}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <my-pagination></my-pagination>
+
+</div>
