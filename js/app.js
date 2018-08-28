@@ -123,7 +123,19 @@ app.config(function($stateProvider, $urlRouterProvider){
             }
 
 
-
+        })
+        .state("PageSix",{
+            url:"/page_six",
+            templateUrl:"templates/page_six.html",
+            controller:"pageSixCtrl",
+            resolve:{
+                loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+                    return $ocLazyLoad.load({
+                        name:"appSix",
+                        files:["js/controllers/pageSixCtrl.js"]
+                    })
+                }]
+            }
         })
 
 })
