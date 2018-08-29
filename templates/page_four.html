@@ -94,5 +94,23 @@
                 <p>123457890 : {{123457890 | date:"MM/dd/yyyy hh:mm:dd" }}</p>
             </div>
         </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">ng-option</div>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    current is: {{ engineer.currentActivity}}
+                </div>
+                <div class="col-md-4">
+                    <label>Choose a new activity:</label>
+                    <select
+                            ng-model = "engineer.currentActivity"
+                            class="form-control"
+                            ng-options = "data.name for data in activities.data" >
+                    </select >
+                </div>
+            </div>
+        </div>
     </div>
 </div>

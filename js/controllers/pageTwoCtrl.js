@@ -47,11 +47,13 @@ appTwo.controller('pageTwoCtrl',['$scope','$http','$rootScope',function($scope,$
 			}
 
 			$scope.$watch('pageIndex', function(){
+				$scope.checked = [];
 				$scope.search();
+				$scope.selectAll = false;
 			});
 			$scope.jump = function(){
 
-				var value = parseInt($("input").val());
+				var value = parseInt($("#keyValue").val());
 				if (value<1) {
 					$scope.homePage();
 				}else if (value>$scope.pageTotal) {
@@ -66,6 +68,34 @@ appTwo.controller('pageTwoCtrl',['$scope','$http','$rootScope',function($scope,$
 					$scope.jump();
 				}
 			}
+			$scope.checked = [];
+
+			$scope.updateChecked = function(id){
+				if($scope.checked.indexOf(id)==-1){
+					$scope.checked.push(id)
+				}
+				else if($scope.checked.indexOf(id)!=-1){
+					$scope.checked.splice($scope.checked.indexOf(id),1)
+				}
+			}
+			$scope.selectAllCheck = function(){
+				$scope.checked = [];
+				if($scope.selectAll){
+					for(var i = 0;i<$scope.tableData.length;i++){
+						$scope.checked.push(i);
+					}
+				}else{
+					$scope.checked = []
+				}
+			}
+			$scope.print = function(){
+
+				$scope.printData = [];
+				for(var i=0;i<$scope.checked.length;i++){
+					$scope.printData.push($scope.tableData[$scope.checked[i]]);
+				}
+				console.log($scope.printData)
+			}
 		})
 
 }]);
@@ -79,7 +109,7 @@ appTwo.directive('myPagination',function(){
 				'<li><button class="btn" ng-click="homePage()">首页</button></li>'+
 				'<li>当前页：{{pageIndex}}</li>'+
 				'<li><button class="btn" ng-click="prePage()">上一页</button></li>'+
-				'<li>跳转：<input  type="text" ng-keyup="keyJump($event)" /><button class="btn" ng-click="jump()">确认</button></li>'+
+				'<li>跳转：<input  type="text" id="keyValue" ng-keyup="keyJump($event)" /><button class="btn" ng-click="jump()">确认</button></li>'+
 				'<li><button class="btn" ng-click="nextPage()">下一页</button></li>'+
 				'<li>总页数：{{pageTotal}}</li>'+
 				'<li><button class="btn" ng-click="endPage()">末页</button></li>'+

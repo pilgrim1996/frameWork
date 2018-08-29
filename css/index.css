@@ -85,14 +85,15 @@ section{
 [ui-view]{
     width: 100%;
     background-color: #ffffff;
+    position: absolute;
 }
 [ui-view].ng-enter {
-    position: absolute;
+
     animation: sildeIn 1s both ease-in-out ;
 }
 
 [ui-view].ng-leave {
-    position: absolute;
+
     animation: sildeOut 0.8s both ease-in-out ;
 }
 table{

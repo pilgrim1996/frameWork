@@ -39,6 +39,17 @@ appFour.controller('pageFourCtrl',['$scope','myFirstService', function($scope,$r
     $scope.doing = function(){
         console.log( myFirstService.name)
     }
+    $scope.activities =
+    {data:
+        [{ id: 1, name: "Writing code" },
+            { id: 2,name: "Testing code" },
+            { id: 3,name: "Fixing bugs" },
+            { id: 4,name: "Dancing" }]
+    };
+    $scope.engineer = {
+        currentActivity: $scope.activities.data[0]
+    };
+
 
 }])
 appFour.directive("restrictTest",function(){

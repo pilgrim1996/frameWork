@@ -7,11 +7,14 @@
 #pageTwo h3{
 	width: 100%;
 }
-#pageTwo h3 a{
+#pageTwo h3 span{
 	position: absolute;
 	right: 10px;
 	font-size: 14px;
 	line-height: 26px;
+}
+#pageTwo h3 a{
+	margin-right: 10px;
 }
 #pageTwo li{
 	margin-right: 5px;
@@ -31,7 +34,11 @@
 	text-align: center;
 	background-color: #ffffff;
 }
-
+#pageTwo input[type="checkbox"]{
+	width: 12px;
+	height: 12px;
+	line-height: 38px;
+}
 #pageTwoDetail h3{
 	text-align: center;
 	padding-top: 20px;

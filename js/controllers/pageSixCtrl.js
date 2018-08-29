@@ -10,7 +10,6 @@ appSix.controller('pageSixCtrl', ['$scope',function($scope){
         [0, 1, 4, 7, 12, 15, 16, 15, 15, 10, 6, 5],	//London
         [4, 4, 5, 10, 16, 22, 26, 24, 20, 14, 9, 3],	//New York
     ];
-
 }]);
 appSix.directive('line', function() {
     return {
