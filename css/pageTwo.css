@@ -34,10 +34,16 @@
 	text-align: center;
 	background-color: #ffffff;
 }
+.panel{
+	margin-bottom: 0px;
+}
 #pageTwo input[type="checkbox"]{
 	width: 12px;
 	height: 12px;
 	line-height: 38px;
+}
+#pageTwo .form-control{
+	width: 150px;
 }
 #pageTwoDetail h3{
 	text-align: center;
@@ -81,7 +87,6 @@
 }
 #pageTwoAddition .panel-body{
 	background-color: #fff;
-	margin-bottom: 10px;
 }
 #pageTwoAddition .row{
 	background-color: #fff;

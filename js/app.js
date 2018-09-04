@@ -137,7 +137,19 @@ app.config(function($stateProvider, $urlRouterProvider){
                 }]
             }
         })
-
+        .state("PageSeven",{
+            url:"/page_seven",
+            templateUrl:"templates/page_seven.html",
+            controller:"pageSevenCtrl",
+            resolve:{
+                loadMyCtrl:['$ocLazyLoad',function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name:"appSeven",
+                        files:["js/controllers/pageSevenCtrl.js"]
+                    })
+                }]
+            }
+        })
 })
 app.constant("startTime", new Date().toLocaleString());
 app.run(function($rootScope,startTime){

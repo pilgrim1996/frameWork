@@ -2,14 +2,19 @@
     <h3>
         this is page two<span><a href="#" ng-click="print()">打印</a><a ui-sref="PageTwoAddition">新增</a></span>
     </h3>
+    <div class="input-group">
+        <span class="input-group-addon" ng-click="searchName()"  style="cursor: pointer">search</span>
+        <input type="text" class="form-control" id="searchName">
+        <button class="btn btn-default" style="height: 30px" ng-click="searchAll()">查询所有</button>
+    </div>
 
-    <table class="table table-striped table-hover col-md-12">
+    <table class="table table-striped table-hover col-md-12" data-url="././json/data.json">
         <thead>
         <tr>
             <th class="col-md-1">selectAll&nbsp;<input type="checkbox" ng-model="selectAll" ng-change="selectAllCheck()"></th>
             <th class="col-md-3">name</th>
-            <th class="col-md-3">age</th>
-            <th class="col-md-3">sex</th>
+            <th class="col-md-4" ng-click="sortAge()"  style="cursor: pointer">age</th>
+            <th class="col-md-4">sex</th>
         </tr>
         </thead>
         <tbody ng-repeat = "row in tableData ">
