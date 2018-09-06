@@ -3,13 +3,15 @@
  */
 var app = angular.module("app",["ui.router","oc.lazyLoad","ngAnimate","ui.bootstrap"]);
 
+
+
 app.config(function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.when("","page_one");
     $stateProvider
         .state("PageOne",{
             url:"/page_one",
             templateUrl:"templates/page_one.html",
-            controller:"pageOneCtrl",
+           /* controller:"pageOneCtrl",*/
 
             resolve:{
                 loadMyCtrl:['$ocLazyLoad',function ($ocLazyLoad) {
@@ -23,7 +25,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         .state("PageTwo",{
             url:"/page_two",
             templateUrl:"templates/page_two.html",
-            controller:"pageTwoCtrl",
+            /*controller:"pageTwoCtrl",*/
             resolve:{
                 loadMyCtrl:['$ocLazyLoad',function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -49,7 +51,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         .state("PageTwoAddition",{
             url:"/page_two_addition",
             templateUrl:"templates/page_two_addition.html",
-            controller:"pageTwoDetailCtrl",
+            /*controller:"pageTwoDetailCtrl",*/
             resolve:{
                 loadMyCtrl:['$ocLazyLoad',function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -62,7 +64,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         .state("PageTwoDetail",{
             url:"/page_two_detail?id",
             templateUrl:"templates/page_two_detail.html",
-            controller:"pageTwoDetailCtrl",
+            /*controller:"pageTwoDetailCtrl",*/
             resolve:{
                 loadMyCtrl:['$ocLazyLoad',function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -75,7 +77,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         .state("PageThree",{
             url:"/page_three",
             templateUrl:"templates/page_three.html",
-            controller:"pageThreeCtrl",
+            /*controller:"pageThreeCtrl",*/
             resolve:{
                 loadMyCtrl:['$ocLazyLoad',function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -88,7 +90,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         .state("PageFour",{
             url:"/page_four",
             templateUrl:"templates/page_four.html",
-            controller:"pageFourCtrl",
+            /*controller:"pageFourCtrl",*/
             resolve:{
                 loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
                     return $ocLazyLoad.load({
@@ -140,7 +142,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         .state("PageSeven",{
             url:"/page_seven",
             templateUrl:"templates/page_seven.html",
-            controller:"pageSevenCtrl",
+            /*controller:"pageSevenCtrl",*/
             resolve:{
                 loadMyCtrl:['$ocLazyLoad',function ($ocLazyLoad) {
                     return $ocLazyLoad.load({

@@ -11,6 +11,7 @@ appFour.factory("myFirstService",function($http){
     return service;
 })
 appFour.controller('pageFourCtrl',['$scope','myFirstService', function($scope,$rootScope,$http,myFirstService){
+    console.log("four")
     $scope.message1 = "@ test";
     $scope.message2 = "= test";
     $scope.times = 0;

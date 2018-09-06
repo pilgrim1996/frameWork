@@ -17,14 +17,20 @@
             <th class="col-md-4">sex</th>
         </tr>
         </thead>
-        <tbody ng-repeat = "row in tableData ">
+        <tbody  ng-show="tableData.data.length==0">
+            <tr>
+                <td colspan="4" style="line-height: 100px">no message</td>
+            </tr>
+        </tbody>
+        <tbody ng-show="tableData.length!=0" ng-repeat = "row in tableData | pageJump:pageIndex:pageRows"  >
         <tr>
-            <td><input type="checkbox"  ng-checked="selectAll"  ng-click="updateChecked($index)" ></td>
+            <td><input type="checkbox"  ng-checked="selectAll"  ng-click="updateChecked($index+pageRows*(pageIndex-1))" ></td>
             <td><a ui-sref="PageTwoDetail({id:{{$index+pageRows*(pageIndex-1)}}})">{{row.name}}</a></td>
             <td>{{row.age}}</td>
             <td>{{row.sex}}</td>
         </tr>
         </tbody>
+
     </table>
     <my-pagination></my-pagination>
 
