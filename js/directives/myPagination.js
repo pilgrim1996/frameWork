@@ -17,7 +17,8 @@ app.directive('myPagination',function($http){
         '<li><button class="btn" ng-click="endPage()">末页</button></li>'+
         '</ul>'+
         '</footer>',
-        controller:function($scope,$http){
+        controller:function($scope,$http,$filter){
+
 
             $scope.homePage = function () {
                 $scope.pageIndex = 1;

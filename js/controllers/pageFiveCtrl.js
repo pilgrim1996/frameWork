@@ -4,7 +4,7 @@
 var appFive = angular.module('appFive',[]);
 appFive.controller('pageFiveCtrl',['$scope','$http',function($scope,$http,$stateScope){
     $http.get("././json/bookTypeList.json").success(function(res){
-        $scope.BookTypedata = res.data;
+        $scope.BookTypeData = res.data;
     })
     /*$scope.statement.bookTypeJson = $stateScope.bookTypeJson;
     $scope.$watch('statement.bookTypeJson',function(){

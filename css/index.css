@@ -89,12 +89,12 @@ section{
 }
 [ui-view].ng-enter {
 
-    animation: sildeIn 1s both ease-in-out ;
+    animation: sildeIn 0.7s both ease-in-out ;
 }
 
 [ui-view].ng-leave {
 
-    animation: sildeOut 0.8s both ease-in-out ;
+    animation: sildeOut 0.6s both ease-in-out ;
 }
 table{
     background-color: #ffffff;

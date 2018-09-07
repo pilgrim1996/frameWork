@@ -1,11 +1,11 @@
 var appTwo = angular.module('appTwo', []);
 appTwo.filter("pageJump",function(){
-	return function(input,pageIndex,pageRow){
+	return function(input,pageIndex,pageRows){
 		if(!input)
 			return ;
 		var arr=[];
-		var start = ( pageIndex - 1 ) * pageRow
-		var end = pageIndex*pageRow-1
+		var start = ( pageIndex - 1 ) * pageRows
+		var end = pageIndex*pageRows-1
 		for(var i=start;i<end;i++){
 			if(input.data.length>i){
 				arr.push(input.data[i])
@@ -18,6 +18,7 @@ appTwo.filter("pageJump",function(){
 })
 appTwo.controller('pageTwoCtrl',['$scope','$http','$filter',function($scope,$http,$filter){
 	$scope.dataUrl = $("table").attr("data-url")
+
 	$scope.searchAll = function () {
 		$http.post($scope.dataUrl)
 			.success(function (res) {
@@ -26,7 +27,9 @@ appTwo.controller('pageTwoCtrl',['$scope','$http','$filter',function($scope,$htt
 				$scope.focus();
 			});
 	}
+
 	$scope.searchAll();
+
 	var sortAgeFlag = false;
 	$scope.sortAge = function () {
 		$scope.tableData.data = $filter('orderBy')($scope.tableData.data,["age","name"],!sortAgeFlag)
@@ -62,16 +65,24 @@ appTwo.controller('pageTwoCtrl',['$scope','$http','$filter',function($scope,$htt
 			$scope.checked.splice($scope.checked.indexOf(id),1)
 		}
 	}
+
 	$scope.selectAllCheck = function(){
 		$scope.checked = [];
 		if($scope.selectAll){
-			for(var i = 0;i<$scope.tableData.data.length;i++){
-				$scope.checked.push(i);
+			for (
+				var i = ($scope.pageIndex - 1) * $scope.pageRows;
+				i < $scope.pageIndex * $scope.pageRows - 1;
+				i++) {
+				if(i<$scope.tableData.data.length)
+					$scope.checked.push(i);
+				else
+					break
 			}
 		}else{
 			$scope.checked = []
 		}
 	}
+
 	$scope.print = function(){
 		$scope.printData = [];
 		for(var i=0;i<$scope.checked.length;i++){
@@ -91,9 +102,12 @@ appTwo.controller('pageTwoCtrl',['$scope','$http','$filter',function($scope,$htt
 		$scope.tableData.pageRows = $scope.pageRows
 		$scope.pageTotal = Math.ceil($scope.tableData.data.length / $scope.pageRows);
 	}
+
 	$scope.focus = function(){
 		$scope.$watch('pageIndex',function(){
 			$scope.tableData.pageIndex = $scope.pageIndex;
+			$scope.selectAll = false;
+			$scope.checked = []
 		})
 	}
 
